@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+    
+<body>
+    <div id="app1">
+        <h1 class="jumbotron">Operaciones</h1>
+        <p></p>
+        <input type="number" class="form-control" placeholder="Ingrese un numero"
+        v-model="numero1">
+        <p></p>
+        <input type="number" class="form-control" placeholder="Ingrese un numero"
+        v-model="numero2">
+        <p></p>
+        <button class="btn btn-danger"
+        @click="Suma()">Sumar</button>
+        <p></p>
+        <button class="btn btn-light"
+        @click="Resta()">Resta</button>
+        <p></p>
+        <button class="btn btn-light"
+        @click="Multiplicacion()">Multiplicacion</button>
+        <p></p>
+        <button class="btn btn-light"
+        @click="Division()">Division</button>
+        <p></p>
+        <button class="btn btn-light"
+        @click="Residuo()">Residuo</button>
+        <p></p>
+        <button class="btn btn-primary"
+        @click="Potencia()">Potencia</button>
+        <p></p>
+        <h2>la respuesta es {{total}}</h2>
+    </div>
+    <script>
+        var app6 = new Vue({
+            el: '#app1',
+            data: {
+                numero1:'Ingrese un numero',
+                numero2:'Ingrese otro numero',
+                total:0
+            },
+            methods: {
+                Suma(){
+                    this.total=parseInt(this.numero1)+parseInt(this.numero2);
+                },
+                Multiplicacion(){
+                    this.total=parseInt(this.numero1)*parseInt(this.numero2);
+                },
+                Division(){
+                    this.total=parseInt(this.numero1)/parseInt(this.numero2);
+                },
+                Residuo(){
+                    this.total=parseInt(this.numero1)%parseInt(this.numero2);
+                },
+                Resta(){
+                    this.total=parseInt(this.numero1)-parseInt(this.numero2);
+                },
+                Potencia(){
+                    this.total=Math.pow(parseInt(this.numero1),parseInt(this.numero2));
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
